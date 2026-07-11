@@ -13,17 +13,17 @@ jobs:
       - uses: actions/checkout@v4
       - name: Check query files
         run: |
-          ls queries/rail/*.scm
-      - name: Validate rail-ts-mode.el
+          ls queries/loco/*.scm
+      - name: Validate loco-ts-mode.el
         run: |
           # Basic syntax check — look for matching parens
           python3 -c "
-          with open('rail-ts-mode.el') as f:
+          with open('loco-ts-mode.el') as f:
               content = f.read()
           opens = content.count('(')
           closes = content.count(')')
           if opens == closes:
-              print(f'rail-ts-mode.el: {opens} open, {closes} close — OK')
+              print(f'loco-ts-mode.el: {opens} open, {closes} close — OK')
           else:
               print(f'WARNING: {opens} open vs {closes} close parens')
           "
