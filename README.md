@@ -1,3 +1,6 @@
+[![CI](https://github.com/loco-lang/loco-emacs/actions/workflows/ci.yml/badge.svg)](https://github.com/loco-lang/loco-emacs/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+
 # Loco for Emacs
 
 Loco language support for [Emacs](https://www.gnu.org/software/emacs/) using built-in tree-sitter support.
