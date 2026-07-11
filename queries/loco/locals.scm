@@ -6,14 +6,11 @@
 (proc_definition) @scope
 (composite_definition) @scope
 (actor_definition) @scope
-(_if_expression) @scope
 
 ; Variable definitions
 ; Block-level let bindings
-(block
-  (statement
-    (_block_let
-      name: (identifier) @definition)))
+(statement
+  name: (identifier) @definition)
 
 ; Top-level binding declarations
 (binding_declaration
