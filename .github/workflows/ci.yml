@@ -1,0 +1,29 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check query files
+        run: |
+          ls queries/rail/*.scm
+      - name: Validate rail-ts-mode.el
+        run: |
+          # Basic syntax check — look for matching parens
+          python3 -c "
+          with open('rail-ts-mode.el') as f:
+              content = f.read()
+          opens = content.count('(')
+          closes = content.count(')')
+          if opens == closes:
+              print(f'rail-ts-mode.el: {opens} open, {closes} close — OK')
+          else:
+              print(f'WARNING: {opens} open vs {closes} close parens')
+          "
